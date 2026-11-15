@@ -1,0 +1,12 @@
+{
+  "title": "klipo",
+  "language": "es",
+  "description": "Cobra suscripciones con QR CoDi y lleva el control de quién ya pagó.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

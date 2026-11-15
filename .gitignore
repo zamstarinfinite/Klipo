@@ -1,0 +1,29 @@
+# Secrets & Environment
+apiPey.txt
+.env
+.env.*
+!.env.example
+
+# Databases
+*.db
+*.db-wal
+*.db-shm
+*.sqlite*
+tests/e2e/.test_klipo.db*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.pytest_cache/
+
+# Node & Frontend Build
+node_modules/
+dist/
+
+# OS artifacts
+.DS_Store
+Thumbs.db

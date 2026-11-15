@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700;800&display=swap');
+@import 'tailwindcss';
+
+/*
+ * klipo — paleta
+ * Vino:     la marca y la acción de cobrar (logo, botón Cobrar, Generar QR).
+ * Petróleo: el color nuevo. Navegación, selección, enlaces y la tarjeta principal.
+ * Hoja / Miel: estados (pagado / atrasado). Crema y arena: superficies.
+ */
+@theme {
+  --font-serif: 'Bitter', 'Liberation Serif', Georgia, serif;
+
+  --color-cream: #fdf6e3;
+  --color-paper: #fffbf2;
+  --color-sand: #e8dcc0;
+  --color-sand-100: #f3ead4;
+  --color-ink: #201914;
+
+  --color-wine: #7a1e2b;
+  --color-wine-700: #5b0417;
+  --color-wine-50: #f5e3df;
+
+  --color-petrol: #17414f;
+  --color-petrol-700: #0e2d38;
+  --color-petrol-50: #e1eae8;
+
+  --color-leaf: #2e7d5b;
+  --color-leaf-50: #dcecdf;
+  --color-mint: #93d6b4;
+
+  --color-honey: #d9a441;
+  --color-honey-50: #f6e7c4;
+  --color-honey-700: #8a5d0c;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-petrol);
+    outline-offset: 2px;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@utility animate-rise {
+  animation: rise 0.28s ease-out both;
+}
+@utility animate-pop {
+  animation: pop 0.4s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
